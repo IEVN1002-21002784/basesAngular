@@ -104,3 +104,4 @@ encontrar() {
   this.valormaximo = this.valorfinal + this.valorfinal * this.tolerancia;
 }
 }
+
