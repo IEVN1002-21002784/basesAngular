@@ -1,0 +1,36 @@
+<div class="row">
+  <h1>Cinépolis</h1>
+
+  <form [formGroup]="formulario" (ngSubmit)="calcularTotal()">
+    <div>
+      <label for="nombre">Nombre</label>
+      <input type="text" formControlName="nombre" placeholder="Introduce tu nombre">
+    </div>
+
+    <div>
+      <label for="cantidadPersonas">Cantidad de Personas</label>
+      <input type="number" formControlName="cantidadPersonas" placeholder="1" min="1">
+    </div>
+
+    <div>
+      <label for="cantidadBoletos">Cantidad de Boletos (Máximo 7 por persona)</label>
+      <input type="number" formControlName="cantidadBoletos" placeholder="1" min="1">
+    </div>
+
+    <div>
+      <label>
+        <input type="checkbox" formControlName="usaCineco"> Tarjeta Cineco
+      </label>
+    </div>
+
+    <button type="submit">Calcular Total</button>
+
+    <div *ngIf="errorMessage" style="color: red;">
+      <h4>{{ errorMessage }}</h4>
+    </div>
+
+    <div *ngIf="total !== undefined">
+      <h3>Total a Pagar: {{ total | currency:'MXN':'symbol':'1.2-2':'en' }}</h3>
+    </div>
+  </form>
+</div>

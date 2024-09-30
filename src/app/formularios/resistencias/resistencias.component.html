@@ -1,0 +1,138 @@
+<div class="container principal">
+  <form [formGroup]="formulario">
+    <div class="row justify-content-center p-5">
+      <div class="col-md-4">
+        <p>Primera banda</p>
+        <div>
+          <label for="">Color1</label>
+          <select
+            class="form-select"
+            name="colores1"
+            id="colores1"
+            (change)="encontrar()"
+            formControlName="colores1"
+            [(ngModel)]="color1"
+          >
+            <option value="Negro">Negro</option>
+            <option value="Café">Café</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="Verde">Verde</option>
+            <option value="Azul">Azul</option>
+            <option value="Violeta">Violeta</option>
+            <option value="Gris">Gris</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <p>Segunda banda</p>
+        <div>
+          <label for="">Color2</label>
+          <select
+            class="form-select"
+            name="colores2"
+            id="colores2"
+            (change)="encontrar()"
+            formControlName="colores2"
+            [(ngModel)]="color2"
+          >
+            <option value="Negro">Negro</option>
+            <option value="Café">Café</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="Verde">Verde</option>
+            <option value="Azul">Azul</option>
+            <option value="Violeta">Violeta</option>
+            <option value="Gris">Gris</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <p>Tercera banda</p>
+        <div>
+          <label for="">Color3</label>
+          <select
+            class="form-select"
+            name="colores3"
+            id="colores3"
+            (change)="encontrar()"
+            formControlName="colores3"
+            [(ngModel)]="color3"
+          >
+            <option value="Negro">Negro</option>
+            <option value="Café">Café</option>
+            <option value="Rojo">Rojo</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Amarillo">Amarillo</option>
+            <option value="Verde">Verde</option>
+            <option value="Azul">Azul</option>
+            <option value="Violeta">Violeta</option>
+            <option value="Gris">Gris</option>
+            <option value="Blanco">Blanco</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row px-5">
+      <p class="m-0">Tolerancia</p>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          (change)="encontrar()"
+          id="flexRadioDefault1"
+          value="dorado"
+          formControlName="tolerancia"
+          [(ngModel)]="color4"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">Oro</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="flexRadioDefault"
+          (change)="encontrar()"
+          id="flexRadioDefault2"
+          value="plata"
+          formControlName="tolerancia"
+          [(ngModel)]="color4"
+        />
+        <label class="form-check-label" for="flexRadioDefault2">Plata</label>
+      </div>
+    </div>
+  </form>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Color 1</th>
+        <th>Color 2</th>
+        <th>Color 3</th>
+        <th>Color Tolerancia</th>
+        <th>Valor</th>
+        <th>Valor mínimo</th>
+        <th>Valor máximo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td [style.background-color]="bcolor1">{{ color1 }}</td>
+        <td [style.background-color]="bcolor2">{{ color2 }}</td>
+        <td [style.background-color]="bcolor3">{{ color3 }}</td>
+        <td [style.background-color]="bcolor4">{{ color4 }}</td>
+        <td>{{ valorfinal }}</td>
+        <td>{{ valorminimo }}</td>
+        <td>{{ valormaximo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
